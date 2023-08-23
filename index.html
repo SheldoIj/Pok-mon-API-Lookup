@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final Exam Assignment</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/program.js"></script>
+    <script src="js/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <div id="head">
+        <h1>Pokemon Lookup</h1>
+        <img id="pokeImg" />
+    </div>
+    <div id="wrapper">
+        <!-- a search field that a user can enter values to search for items in the API -->
+        <div id="postDiv">
+            <label for="name">Pokemon Name (or ID):</label>
+            <input type="text" onchange="getInfo(this)" id="name" name="name"><br><br>
+        </div>
+        <!-- ************************************************************************   -->
+        <div id="otherDiv">
+            <label for="pokeID">Pokemon ID #:</label>
+            <input type="text" id="pokeID" name="pokeID"><br><br>
+            <label for="pokeType">Pokemon Type:</label>
+            <input type="text" id="pokeType" name="pokeType"><br><br>
+        </div>
+
+        <!-- a result listing of the search dumped into an HTML table or jQuery Datatable -->
+        <div id="float-container">
+            <div id="abilities" style="width:50%">
+                <input type="radio" id="moveBtn" onclick="displayData('moves');">
+
+
+
+                <div id="myModal" class="modal">
+                    <!-- Trigger/Open The Modal -->
+                    <button id="myBtn">Open Modal</button>
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p><a><href>"https://pokeapi.co/api/v2/move/"</href></a></p>
+                    </div>
+                </div>
+
+
+
+                <h2>Moves   (Level Learned)</h2>
+                <table id="tblMoves">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Level</td>
+                        </tr>
+                    </thead>
+
+                </table>
+
+            </div>
+            <div id="instances" style="width:50%">
+                <input type="radio" id="gameBtn" onclick="displayData('games');">
+                <h2>Games</h2>
+                <table id="tblGames">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Game #</td>
+                        </tr>
+                    </thead>
+                </table>
+
+            </div>
+        </div>
+        <!-- ************************************************************************   -->
+    </div>
+    <h3>Tutorial:</h3>
+    <p>In order to use application, enter the name of any pokemon(Spelled Correctly), OR enter it's ID number.<br /> Basic details will be provided and the option will be given to learn it's moves that are able to be acquired or the games that said pokemon can be encountered in.<br /> A new pokemon may be searched without reloading the page. Pokemon ID numbers range from (1-905).<br /></p>
+    <br />
+    <p><strong>Note: </strong>Some newer pokemon may not have moves or games listed in the API yet.<br /> Open Links with new tab.</p>
+</body>
+</html>
